@@ -1,13 +1,21 @@
 #!/usr/bin/env bash
-# install nginx web server
 
-sudo apt-get update && upgrade
+# Update and upgrade packages
+sudo apt-get update
+sudo apt-get upgrade -y
+
+# Install nginx
 sudo apt-get install nginx -y
 
-#Create a directory called html inside your nginx server
+# Create a directory called html inside your nginx server
 sudo mkdir -p /var/www/html
-#Create a file inside that directory called index.html
+
+# Create a file inside that directory called index.html
 sudo touch /var/www/html/index.html
-#Display your message then
-sudo echo "Holberton School" > /var/www/html/index.html
+
+# Display your message in index.html
+echo "Holberton School" | sudo tee /var/www/html/index.html
+
+# Restart nginx
 sudo service nginx restart
+
